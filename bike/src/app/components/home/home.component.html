@@ -1,0 +1,134 @@
+<div fxLayout="column" fxLayoutAlign="start stretch">
+  <app-header></app-header>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="contain">
+      <form [formGroup]="form">
+        <mat-card-content>
+          <mat-form-field style="width:70%;margin-left: 15%;">
+            <mat-label>Select Location</mat-label>
+            <mat-select formControlName="location">
+              <mat-option *ngFor="let loc of location" [value]="loc">
+                {{loc}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+          <!-- ------------------------pickupdate------------------------------- -->
+
+          <mat-form-field style="width:30%;margin-left: 15%;">
+            <mat-label>Pickup Date</mat-label>
+            <input matInput [matDatepicker]="date" formControlName="Pdate">
+            <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+            <mat-datepicker #date></mat-datepicker>
+          </mat-form-field>
+
+
+          <!-- ------------------------pickup time------------------------------- -->
+
+          <!-- <mat-form-field style="width:30%;margin-left: 10%;">
+            <mat-label>Pickup Time</mat-label>
+            <input type="text" matInput [ngxMatTimepicker]="timepicker" [format]=24 [required]="required" readonly
+              formControlName="Ptime" />
+            <mat-icon matSuffix *ngIf="!Ptime.disabled" (click)="openFromIcon(timepicker)">schedule</mat-icon>
+
+
+          </mat-form-field>
+          <ngx-mat-timepicker #timepicker></ngx-mat-timepicker> -->
+
+            <mat-form-field style="width:30%;margin-left: 10%;">
+              <mat-label>Pickup Time</mat-label>
+              <input matInput [ngxTimepicker]="toggleTimepicker1" [format]="12" [min]="currentTime"
+                (ngModelChange)="selectInTime($event)" formControlName="Ptime" required>
+
+              <mat-icon matSuffix>
+                <ngx-material-timepicker-toggle [for]="toggleTimepicker1"> </ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #toggleTimepicker1></ngx-material-timepicker>
+              </mat-icon>
+            </mat-form-field>
+
+
+
+          <!-- ------------------------Return date------------------------------- -->
+
+
+          <mat-form-field style="width:30%;margin-left: 15%;">
+            <mat-label>Return Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="Rdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+
+          <!-- ------------------------Return time------------------------------- -->
+          <!-- <mat-form-field style="width:30%;margin-left: 10%;">
+            <mat-label>Return Time</mat-label>
+            <input type="text" matInput [ngxMatTimepicker]="timepicker1" [format]=24 [required]="required" readonly
+              formControlName="Rtime">
+
+
+
+            <mat-icon matSuffix *ngIf="!Rtime.disabled" (click)="openFromIcon1(timepicker1)">schedule</mat-icon>
+
+
+          </mat-form-field> -->
+          <!-- <ngx-mat-timepicker #timepicker1></ngx-mat-timepicker> -->
+
+            <mat-form-field style="width:30%;margin-left: 10%;">
+              <mat-label>Return Time</mat-label>
+              <input matInput [ngxTimepicker]="toggleTimepicker2" [format]="12" [min]="currentTime"
+                (ngModelChange)="selectInTime($event)" formControlName="Rtime" required>
+
+              <mat-icon matSuffix>
+                <ngx-material-timepicker-toggle [for]="toggleTimepicker2"> </ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #toggleTimepicker2></ngx-material-timepicker>
+              </mat-icon>
+            </mat-form-field>
+
+        </mat-card-content>
+        <button mat-raised-button></button>
+      </form>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button class="ride" mat-raised-button (click)="submit()">Get Ride</button>
+      </div>
+    </mat-card>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-card class="works">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span>
+          <h1>HOW IT WORK</h1>
+        </span>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+        <div fxLayout="column" fxLayoutAlign="start start">
+
+          <mat-card>
+            <img src="../../../assets/images/selectBikeg.png">
+            <h3>Select Your Bike</h3>
+
+
+          </mat-card>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center">
+
+          <mat-card>
+            <img src="../../../assets/images/bookBikeg.png">
+            <h3>Book your Bike</h3>
+
+
+
+          </mat-card>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="end end">
+          <mat-card>
+            <img src="../../../assets/images/spinBikeg.png">
+            <h3>Take it for Ride</h3>
+
+          </mat-card>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <app-footer></app-footer>
+</div>

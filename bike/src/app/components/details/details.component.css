@@ -1,0 +1,35 @@
+.pointer {
+  cursor: pointer !important;
+}
+.logo{
+  width:60px;
+  height:40px;
+}
+.example-spacer {
+  flex: 0.98 1 auto;
+}
+.uploadbutton{
+  color:white;
+  background-color:#F6A609;
+  margin-left:20px;
+
+
+}
+.card{
+  width:100%;
+  margin-left:10%;
+  margin-bottom: 15%;
+  text-align: center;
+  border:2px solid;
+  border-color:#6CB33F
+
+}
+.btn{
+  background-color:#6CB33F ;
+  color:white;
+
+}
+.submit{
+  background-color:#6CB33F ;
+  color:white;
+}
