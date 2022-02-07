@@ -20,8 +20,10 @@
         <mat-form-field style="width:70%">
           <mat-label for="password">Password:</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
-          <input class="pointer" matInput type="password" [type]="hide1 ? 'password' : 'text'"  formControlName="password" >
-          <mat-icon class="icon-size" matSuffix (click)="hide1 = !hide1" >{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          <input class="pointer" matInput type="password" [type]="hide1 ? 'password' : 'text'"
+            formControlName="password">
+          <mat-icon class="icon-size" matSuffix (click)="hide1 = !hide1">{{hide ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
           <mat-error *ngIf="password.touched && password.invalid">
 
           </mat-error>
@@ -41,4 +43,3 @@
   </mat-card>
 
 </div>
-

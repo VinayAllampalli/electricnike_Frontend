@@ -7,36 +7,54 @@ import { environment } from "../../environments/environment"
 })
 export class BikeService {
 
-  constructor(private http:HttpClient) { }
+
+  constructor(private http: HttpClient) { }
 
 
-  register(obj:any){
+  register(obj: any) {
     const body = JSON.stringify(obj);
-    return this.http.post(`${environment.base_url}/register`,obj,{})
+    return this.http.post(`${environment.base_url}/register`, obj, {})
   }
-  login(obj:any) {
+  login(obj: any) {
     return this.http.post(`${environment.base_url}/login`, obj)
   }
-  verifyMail(email:any,token:any){
+  verifyMail(email: any, token: any) {
     return this.http.get(`${environment.base_url}/confirm/${email}/${token}`);
   }
-  forgot(obj:any){
-    return this.http.post(`${environment.base_url}/reset`,obj);
+  forgot(obj: any) {
+    return this.http.post(`${environment.base_url}/reset`, obj);
   }
-  validToken(obj:any){
+  validToken(obj: any) {
     return this.http.post(`${environment.base_url}/valid-token`, obj);
   }
-  newPassword(obj:any){
+  newPassword(obj: any) {
     return this.http.post(`${environment.base_url}/new-password`, obj);
   }
 
-  bookinguser(obj:any){
+  bookinguser(obj: any) {
     const body = JSON.stringify(obj);
-    return this.http.post(`${environment.base_url}/bikebooking`,obj,{})
+    return this.http.post(`${environment.base_url}/bikebooking`, obj, {})
   }
-  bikesinfo(obj:any){
+  bikesinfo(obj: any) {
     const body = JSON.stringify(obj);
-    return this.http.post(`${environment.base_url}/bikedetails`,obj,{})
+    return this.http.post(`${environment.base_url}/bikedetails`, obj, {})
   }
 
+  bikesdata(){
+    return this.http.get(`${environment.base_url}/bike/bikesdata`)
+   }
+   bikeregisterget(){
+    return  this.http.get(`${environment.base_url}/bikeByget`)
+    }
+
+
+    bikeregisterdatadelete(deletebike:any){
+     return this.http.delete(`${environment.base_url}/bikeremove`,deletebike)
+    }
+    bikeupdate(obj:any){
+      return this.http.post(`${environment.base_url}/bikeupdate`,obj)
+    }
+    bikereg(obj: any){
+      return this.http.post(`${environment.base_url}/bikedetails1`,obj,{})
+     }
 }

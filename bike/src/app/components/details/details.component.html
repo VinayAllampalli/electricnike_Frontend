@@ -1,100 +1,101 @@
+<div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="40px" fxFlex="60"
+  style="margin-left:2.5%;margin-top:5%">
+  <mat-card>
+
+    <img src="../../../assets/images/selectBikeg.png">
+    <div fxLayout="row" fxLayoutAlign="end end">
+      <button (click)="openDialog()">
+        <mat-icon>info</mat-icon>
+      </button> &nbsp;
+      <button mat-raised-button class="btn" (click)="book(bikename[0])">book</button>
 
 
+    </div>
+  </mat-card>
 
-  <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="40px" fxFlex="60" style="margin-left:2.5%;margin-top:5%">
-    <mat-card >
+  <mat-card>
+    <img src="../../../assets/images/selectBikeg.png">
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <button mat-raised-button class="btn" (click)="book(bikename[1])">book</button>
+    </div>
+  </mat-card>
 
-        <img src="../../../assets/images/selectBikeg.png">
-        <div fxLayout="row" fxLayoutAlign="end end">
-          <button (click)="openDialog()"><mat-icon>info</mat-icon></button> &nbsp;
-          <button mat-raised-button class="btn" (click)="book(bikename[0])">book</button>
+  <mat-card>
+    <img src="../../../assets/images/selectBikeg.png">
 
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <button mat-raised-button class="btn" (click)="book(bikename[2])">book</button>
+    </div>
+  </mat-card>
+  <mat-card>
+    <img src="../../../assets/images/selectBikeg.png">
 
-          </div>
-      </mat-card>
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <button mat-raised-button class="btn" (click)="book(bikename[3])">book</button>
+    </div>
+  </mat-card>
 
-        <mat-card>
-          <img src="../../../assets/images/selectBikeg.png">
-          <div fxLayout="column" fxLayoutAlign="end end" >
-          <button mat-raised-button class="btn" (click)="book(bikename[1])">book</button>
-          </div>
-        </mat-card>
+  <mat-card>
+    <img src="../../../assets/images/selectBikeg.png">
 
-          <mat-card >
-            <img src="../../../assets/images/selectBikeg.png">
-
-            <div fxLayout="column" fxLayoutAlign="end end" >
-              <button mat-raised-button class="btn" (click)="book(bikename[2])">book</button>
-              </div>
-          </mat-card>
-          <mat-card >
-            <img src="../../../assets/images/selectBikeg.png">
-
-            <div fxLayout="column" fxLayoutAlign="end end" >
-              <button mat-raised-button class="btn" (click)="book(bikename[3])">book</button>
-              </div>
-          </mat-card>
-
-          <mat-card >
-            <img src="../../../assets/images/selectBikeg.png">
-
-            <div fxLayout="column" fxLayoutAlign="end end" >
-              <button mat-raised-button class="btn" (click)="book(bikename[4])">book</button>
-              </div>
-          </mat-card>
+    <div fxLayout="column" fxLayoutAlign="end end">
+      <button mat-raised-button class="btn" (click)="book(bikename[4])">book</button>
+    </div>
+  </mat-card>
 
 
 </div>
 
 <div fxLayout="column" fxLayoutAlign="start start" fxFlex="30" style="margin-top:5%;">
 
-  <mat-card class='card'
-    style="width:100%; margin-left:10%; margin-bottom: 15%; text-align: center;">
+  <mat-card class='card' style="width:100%; margin-left:10%; margin-bottom: 15%; text-align: center;">
     <form [formGroup]="form">
       <mat-card-content>
-  <div fxLayout="column" fxLayoutAlign="center center">
-        <mat-form-field style="width:90%;">
-          <mat-label for="bike">Select Bike</mat-label>
-          <input class="pointer" matInput type="text" formControlName="bike" [(ngModel)]="display">
-          <mat-error *ngIf="bike.touched && bike.invalid">
-          </mat-error>
-        </mat-form-field>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <mat-form-field style="width:90%;">
+            <mat-label for="bike">Select Bike</mat-label>
+            <input class="pointer" matInput type="text" formControlName="bike" [(ngModel)]="display">
+            <mat-error *ngIf="bike.touched && bike.invalid">
+            </mat-error>
+          </mat-form-field>
         </div>
         <div fxLayout="column" fxLayoutAlign="center center">
-        <mat-form-field style="width:90%;">
-          <mat-label for="AAno"> Enter Aadhar Number:</mat-label>
-          <input class="pointer" matInput type="text" formControlName="AAno">
-          <mat-error *ngIf="AAno.touched && AAno.invalid">
-          </mat-error>
-        </mat-form-field>
+          <mat-form-field style="width:90%;">
+            <mat-label for="AAno"> Enter Aadhar Number:</mat-label>
+            <input class="pointer" matInput type="text" formControlName="AAno">
+            <mat-error *ngIf="AAno.touched && AAno.invalid">
+            </mat-error>
+          </mat-form-field>
         </div>
         <div fxLayout="row wrap" fxLayoutAlign="start start">
-           <input type="file" (change)="fileUpload($event)" accept=".jpeg,.png,.pdf" style="display:none"  #file formControlName="file">
-              <button class="uploadbutton" mat-button (click)="file.click();" >
-              Upload
+          <input type="file" (change)="fileUpload($event)" accept=".jpeg,.png,.pdf" style="display:none" #file
+            formControlName="file">
+          <button class="uploadbutton" mat-button (click)="file.click();">
+            Upload
             <mat-icon class="icon_size">vertical_align_top</mat-icon>
-            </button>&nbsp;
-            {{filename}}
-            </div>
+          </button>&nbsp;
+          {{filename}}
+        </div>
 
 
-            <div fxLayout="column" fxLayoutAlign="center center">
-            <mat-form-field style="width:90%;">
-              <mat-label for="DLno">Enter Driving License Number:</mat-label>
-              <input class="pointer" matInput type="text" formControlName="DLno">
-              <mat-error *ngIf="DLno.touched && DLno.invalid">
-              </mat-error>
-            </mat-form-field>
-            </div>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <mat-form-field style="width:90%;">
+            <mat-label for="DLno">Enter Driving License Number:</mat-label>
+            <input class="pointer" matInput type="text" formControlName="DLno">
+            <mat-error *ngIf="DLno.touched && DLno.invalid">
+            </mat-error>
+          </mat-form-field>
+        </div>
 
-            <div fxLayout="row wrap" fxLayoutAlign="start start">
-               <input type="file" (change)="fileUpload1($event)" accept=".jpeg,.png,.pdf" style="display: none"  #file1 formControlName="file1">
-                  <button class="uploadbutton" mat-button (click)="file1.click();" >
-                  Upload
-                <mat-icon class="icon_size">vertical_align_top</mat-icon>
-                </button>&nbsp;
-                {{filename1}}
-                </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start start">
+          <input type="file" (change)="fileUpload1($event)" accept=".jpeg,.png,.pdf" style="display: none" #file1
+            formControlName="file1">
+          <button class="uploadbutton" mat-button (click)="file1.click();">
+            Upload
+            <mat-icon class="icon_size">vertical_align_top</mat-icon>
+          </button>&nbsp;
+          {{filename1}}
+        </div>
 
       </mat-card-content>
       <div fxLayout="row" fxLayoutAlign="center center">
@@ -105,14 +106,4 @@
   </mat-card>
 
 
-  </div>
-
-
-
-
-
-
-
-
-
-
+</div>
