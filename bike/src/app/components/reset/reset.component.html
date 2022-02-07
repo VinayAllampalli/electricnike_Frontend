@@ -3,22 +3,24 @@
   <mat-card
     style="width:100%; margin-top:17%; margin-left: 35%; margin-right: 35%; margin-bottom: 22%; text-align: center;">
     <mat-card-title>Create Password</mat-card-title>
-<form [formGroup]="form">
+    <form [formGroup]="form">
       <mat-card-content>
         <mat-form-field style="width:70%">
-          <mat-label >password:</mat-label>
+          <mat-label>password:</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
           <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
-          <input class="pointer" matInput [type]="hide ? 'password' : 'text'" formControlName="newPassword" placeholder="Enter New Password">
+          <input class="pointer" matInput [type]="hide ? 'password' : 'text'" formControlName="newPassword"
+            placeholder="Enter New Password">
           <mat-error *ngIf="newPassword.touched && newPassword.invalid">
           </mat-error>
         </mat-form-field>
 
         <mat-form-field style="width:70%">
-          <mat-label >confirm password:</mat-label>
+          <mat-label>confirm password:</mat-label>
           <mat-icon matPrefix>lock</mat-icon>
           <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
-          <input class="pointer" matInput type="password" [type]="hide1 ? 'password' : 'text'" formControlName="confirmPassword" placeholder="Enter Confirm Password">
+          <input class="pointer" matInput type="password" [type]="hide1 ? 'password' : 'text'"
+            formControlName="confirmPassword" placeholder="Enter Confirm Password">
           <mat-error *ngIf="confirmPassword.touched && confirmPassword.invalid">
 
           </mat-error>
@@ -26,11 +28,10 @@
       </mat-card-content>
 
 
-      <button mat-raised-button style="background-color: #5cb85c; margin-top:2%;" class="btn" (click)="reset(form)">Reset</button>
+      <button mat-raised-button style="background-color: #5cb85c; margin-top:2%;" class="btn"
+        (click)="reset(form)">Reset</button>
     </form>
 
   </mat-card>
 
 </div>
-
-

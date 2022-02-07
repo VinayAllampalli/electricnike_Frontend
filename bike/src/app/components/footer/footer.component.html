@@ -1,24 +1,16 @@
-
 <div fxLayout="column wrap" fxLayoutAlign="start stretch">
-  <mat-card  style="text-align:center;margin-top:5%;">
+  <mat-card style="text-align:center;margin-top:5%;">
     <h1>OUR FLEET</h1>
 
-  <ng-image-slider
-    #nav
-    [images]="imageObject"
-    [infinite]="true"
-    [autoSlide]="2"
-    [imageSize]="{ width: '20%', height:200 }"
-    slideImage="1"
-  ></ng-image-slider>
-</mat-card>
-   <div fxLayout="column wrap" fxLayoutAlign="start stretch">
-<mat-card style="background-color:#6CB33F;text-align:center;">
-  <div class="foot">
-  <h1 style="color:white"> Bikes For Rent <h3>Copyright @ 2022 All rights reserved</h3> </h1>
-  </div>
+    <ng-image-slider #nav [images]="imageObject" [infinite]="true" [autoSlide]="2"
+      [imageSize]="{ width: '20%', height:200 }" slideImage="1"></ng-image-slider>
   </mat-card>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch">
+    <mat-card style="background-color:#6CB33F;text-align:center;">
+      <div class="foot">
+        <h1 style="color:white"> Bikes For Rent <h3>Copyright @ 2022 All rights reserved</h3>
+        </h1>
+      </div>
+    </mat-card>
   </div>
-  </div>
-
-
+</div>

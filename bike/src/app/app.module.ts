@@ -21,6 +21,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BikeService } from './service/bike.service';
+import { BikeregisterComponent } from './components/bikeregister/bikeregister.component';
+import { MoreinfoComponent } from './components/moreinfo/moreinfo.component';
 
 
 
@@ -36,7 +38,9 @@ import { BikeService } from './service/bike.service';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ResetComponent
+    ResetComponent,
+    BikeregisterComponent,
+    MoreinfoComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,6 @@ import { BikeService } from './service/bike.service';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    // NgxMatTimepickerModule,
     NgxMaterialTimepickerModule,
     NgImageSliderModule,
     HttpClientModule,

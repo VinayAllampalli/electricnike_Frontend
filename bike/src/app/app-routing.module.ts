@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BikeinfoComponent } from './components/bikeinfo/bikeinfo.component';
+import { BikeregisterComponent } from './components/bikeregister/bikeregister.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
@@ -54,6 +55,10 @@ const routes: Routes = [{
   {
     path:"confirm/:email/:token",
     component:LoginComponent
+  },
+  {
+    path:"bikeregister",
+    component:BikeregisterComponent
   }
 ];
 

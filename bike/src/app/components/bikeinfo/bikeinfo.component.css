@@ -1,8 +1,17 @@
-.pointer {
-  cursor: pointer !important;
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
 }
-.info
-{
-  color:white;
-  background-color:#6CB33F ;
+th.mat-header-cell {
+  text-align: center;
+  max-width: 300px;
+}
+td {
+  text-align: center;
+  max-width: 300px;
+}
+.tbl-cent{
+  text-align: center;
 }
