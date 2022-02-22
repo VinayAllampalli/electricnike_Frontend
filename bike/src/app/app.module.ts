@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BikeinfoComponent } from './components/bikeinfo/bikeinfo.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
@@ -22,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BikeService } from './service/bike.service';
 import { BikeregisterComponent } from './components/bikeregister/bikeregister.component';
-import { MoreinfoComponent } from './components/moreinfo/moreinfo.component';
+import { UsershistoryComponent } from './components/usershistory/usershistory.component';
+import { ConfirmDetailsComponent } from './components/confirm-details/confirm-details.component';
 
 
 
@@ -30,7 +30,6 @@ import { MoreinfoComponent } from './components/moreinfo/moreinfo.component';
 @NgModule({
   declarations: [
     AppComponent,
-    BikeinfoComponent,
     DetailsComponent,
     FooterComponent,
     ForgotComponent,
@@ -40,7 +39,9 @@ import { MoreinfoComponent } from './components/moreinfo/moreinfo.component';
     RegisterComponent,
     ResetComponent,
     BikeregisterComponent,
-    MoreinfoComponent
+
+    UsershistoryComponent,
+      ConfirmDetailsComponent
   ],
   imports: [
     BrowserModule,

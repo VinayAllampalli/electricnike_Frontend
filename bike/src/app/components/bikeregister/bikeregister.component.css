@@ -20,7 +20,7 @@ th.mat-header-cell {
 .info
 {
   color:white;
-  background-color:#6CB33F ;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da  0%, #314755  100%);
 }
 .uploadbutton{
   background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
@@ -39,22 +39,3 @@ th.mat-header-cell {
 
 
 
- .btn-grad {background-image: linear-gradient(to right, #8E0E00 0%, #1F1C18  51%, #8E0E00  100%)}
- .btn-grad {
-    margin: 10px;
-    padding: 15px 45px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    display: block;
-  }
-
-  .btn-grad:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-  }

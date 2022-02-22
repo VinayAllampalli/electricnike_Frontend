@@ -7,8 +7,14 @@ import { environment } from "../../environments/environment"
 })
 export class BikeService {
 
+  public customer:any;
+  public bookingDetails:any;
+  public details:any;
+  
+  constructor(private http: HttpClient) {
 
-  constructor(private http: HttpClient) { }
+
+  }
 
 
   register(obj: any) {
@@ -35,26 +41,28 @@ export class BikeService {
     const body = JSON.stringify(obj);
     return this.http.post(`${environment.base_url}/bikebooking`, obj, {})
   }
-  bikesinfo(obj: any) {
-    const body = JSON.stringify(obj);
-    return this.http.post(`${environment.base_url}/bikedetails`, obj, {})
-  }
 
-  bikesdata(){
-    return this.http.get(`${environment.base_url}/bike/bikesdata`)
-   }
+
    bikeregisterget(){
     return  this.http.get(`${environment.base_url}/bikeByget`)
-    }
+   }
 
-
-    bikeregisterdatadelete(deletebike:any){
-     return this.http.delete(`${environment.base_url}/bikeremove`,deletebike)
-    }
     bikeupdate(obj:any){
-      return this.http.post(`${environment.base_url}/bikeupdate`,obj)
+      return this.http.put(`${environment.base_url}/bikeupdate`,obj)
     }
     bikereg(obj: any){
       return this.http.post(`${environment.base_url}/bikedetails1`,obj,{})
+     }
+     bikedelete(id:any){
+      return this.http.delete(`${environment.base_url}/bikeremove/`+id)
+    }
+
+     bikeget(){
+      return this.http.get(`${environment.base_url}/getall`)
+
+     }
+     history(){
+      return this.http.get(`${environment.base_url}/history`)
+
      }
 }

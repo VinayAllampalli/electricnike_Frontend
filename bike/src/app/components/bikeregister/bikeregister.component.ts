@@ -10,24 +10,42 @@ import { BikeService } from 'src/app/service/bike.service';
 })
 export class BikeregisterComponent implements OnInit {
   form:any;
+  del:any
   filename: any;
-  public displayedColumns = ['BikeName', 'Mileage', 'BikeModel', 'Topspeed','price', 'update', 'delete']
+  public displayedColumns = ['BikeName', 'Mileage', 'BikeModel', 'Topspeed','price','BikeImage', 'update', 'delete']
   imageSrc: any
   regbike: any;
   data: any;
+  ELEMENT_DATA: any =[]
+  dataSource: any;
 
   constructor(private backend: BikeService, public fb: FormBuilder, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.formbuilder()
 
-    this.backend.bikeregisterget().subscribe(data=>{
-      console.log(data)
-      this.regbike = data
-    })
 
+    this.getData()
+    this.bikeget()
 
       }
+bikeget(){
+       this.backend.bikeregisterget().subscribe(data=>{
+      console.log(data)
+      this.regbike = data;
+
+    })
+  }
+
+      getData(){
+        this.backend.bikeget().subscribe((data) => {
+          this.ELEMENT_DATA = data;
+          this.dataSource = this.ELEMENT_DATA.result
+
+        })
+      }
+
+
 
   formbuilder(){
     this.form = this.fb.group({
@@ -95,21 +113,31 @@ formData.append("price",this.form.get('price')?.value)
   console.log('-----------------------------------', formData);
   this.backend.bikereg(formData).subscribe((data) => {
     console.log('--------', data);
-    this.form.reset();
+   this.bikeget()
   });
+  this.form.reset();
 
 }
 edit(id: any) {
   this.backend.bikeupdate(id).subscribe((x:any) => {
 
-    this.data= x.result;
+    this.data= x;
     console.log("x data", this.data);
-    this.form.patchValue({name:this.data.bike});
-    this.form.patchValue({position:this.data.mile});
-    this.form.patchValue({office:this.data.bikemodel});
-    this.form.patchValue({salary:this.data.speed});
-    this.form.patchValue({salary:this.data.speed});
+    this.form.patchValue({bike:this.data.bike});
+    this.form.patchValue({mile:this.data.mile});
+    this.form.patchValue({bikemodel:this.data.bikemodel});
+    this.form.patchValue({speed:this.data.speed});
+    this.form.patchValue({price:this.data.price});
   })
 }
+remove(id:any){
+  this.backend.bikedelete(id).subscribe((res)=>{
+    this.bikeget()
+    console.log(res)
+  })
+
 }
+
+}
+
 

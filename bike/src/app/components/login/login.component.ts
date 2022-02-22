@@ -74,10 +74,10 @@ export class LoginComponent implements OnInit {
       if (use.success == true) {
 
         let user = use.obj.user
-        localStorage.setItem('email', user.email) // used in guards
-        // console.log('name',res)
+        localStorage.setItem('email', user.email)
         localStorage.setItem('username', user.username)
-        // console.log("------",user.username)
+        this.backend.customer=user.username
+
 
         this.router.navigate(["home"]);
         return true

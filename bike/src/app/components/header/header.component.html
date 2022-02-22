@@ -1,16 +1,35 @@
-<mat-toolbar style="
-  width: 100%;
-  background-color:#6CB33F;
-   color: white;
-  /* opacity: 0.7; */
-">
+<mat-toolbar class="tool">
   <img class="logo" src="../../../assets/images/bike logo.png">&nbsp;&nbsp;&nbsp;
   <span>BIKE FOR RENT</span>
   <span class="example-spacer"></span>
 
   <mat-icon>person</mat-icon>
-  {{name}}&nbsp;&nbsp;
+  {{name}}&nbsp;&nbsp;&nbsp;&nbsp;
+<!--
   <button mat-icon-button (click)="logout()">
-    <mat-icon>logout</mat-icon>
+    <mat-icon>logout</mat-icon>&nbsp; &nbsp; &nbsp;
+
+
+  </button> -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" >
+
+    <mat-icon>more_vert</mat-icon>
+
   </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="history()">
+      <mat-icon>history</mat-icon>
+      <span>Users history</span>
+    </button>
+    <button mat-menu-item (click)="reg()" >
+      <mat-icon>motorcycle</mat-icon>
+      <span>bike Register</span>
+    </button>
+    <button mat-menu-item  (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+
+
 </mat-toolbar>

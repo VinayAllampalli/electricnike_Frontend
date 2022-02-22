@@ -127,6 +127,18 @@
         </div>
       </div>
     </mat-card>
+
   </div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch">
+    <mat-card style="text-align:center;margin-top:5%;">
+      <h1>OUR FLEET</h1>
+
+      <ng-image-slider #nav [images]="imageObject" [infinite]="true" [autoSlide]="2"
+        [imageSize]="{ width: '20%', height:200 }" slideImage="1"></ng-image-slider>
+    </mat-card>
+    </div>
+
   <app-footer></app-footer>
 </div>
+
+

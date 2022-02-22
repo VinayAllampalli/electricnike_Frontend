@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BikeinfoComponent } from './components/bikeinfo/bikeinfo.component';
 import { BikeregisterComponent } from './components/bikeregister/bikeregister.component';
+import { ConfirmDetailsComponent } from './components/confirm-details/confirm-details.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ForgotComponent } from './components/forgot/forgot.component';
@@ -10,10 +10,13 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetComponent } from './components/reset/reset.component';
+import { UsershistoryComponent } from './components/usershistory/usershistory.component';
+import { AuthguardGuard } from './guards/authguard.guard';
 
 const routes: Routes = [{
     path:"home",
-    component:HomeComponent
+    component:HomeComponent,
+    canActivate:[AuthguardGuard]
   },
   {
     path:'',
@@ -27,10 +30,6 @@ const routes: Routes = [{
   {
     path:"details",
     component:DetailsComponent
-  },
-  {
-    path:"bikeinfo",
-    component:BikeinfoComponent
   },
   {
     path:"header",
@@ -59,6 +58,13 @@ const routes: Routes = [{
   {
     path:"bikeregister",
     component:BikeregisterComponent
+  },
+  {
+    path:"usershistory",
+    component:UsershistoryComponent
+  },{
+    path:"confirmDetails",
+    component:ConfirmDetailsComponent
   }
 ];
 

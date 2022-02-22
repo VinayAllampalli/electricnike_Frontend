@@ -1,0 +1,41 @@
+<div fxLayout="column" fxLayoutAlign="start start">
+  <mat-card>
+  <div>
+    Name : {{this.user}}
+
+    </div>
+    <div>
+
+DLno : {{this.details.DLno}}
+</div>
+<div>
+AAno : {{this.details.AAno}}
+</div>
+<div>
+BikeName : {{this.details.bike}}
+</div>
+<div>
+Location : {{this.test.location}}
+</div>
+
+<div>
+  Pickup Date :{{this.test.Pdate}}
+  </div>
+  <div>
+    Pickup Time :{{this.test.Ptime}}
+  </div>
+  <div>
+    Return Date : {{this.test.Rdate}}
+  </div>
+  <div>
+    Return Time : {{this.test.Rtime}}
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button class="submit" mat-raised-button (click)="submit()">Submit</button>
+
+    <button class="cancel"  mat-raised-button (click)="cancel()">Cancel</button>
+
+  </div>
+  </mat-card>
+
+  </div>

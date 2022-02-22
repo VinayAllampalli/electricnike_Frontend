@@ -1,4 +1,5 @@
 <app-header></app-header>
+<!-- <div style="background-image:url('/../assets/images/19859272.jpg')"> -->
 <h1 style="text-align: center;margin-top:3%; font-family: Times New Roman, Times, serif;"> Bike Registration Form</h1>
 <div fxLayout="row wrap" fxLayoutAlign="center center">
 
@@ -56,11 +57,6 @@
   </div>&nbsp;&nbsp;&nbsp;
 
 
-
-
-
-
-
   <div fxLayout="column" fxLayoutAlign="start start">
     <table mat-table  [dataSource]="regbike" class="table">
       <ng-container matColumnDef="BikeName">
@@ -87,11 +83,19 @@
         <td mat-cell *matCellDef="let element"> {{element.price}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="BikeImage">
+        <th mat-header-cell *matHeaderCellDef> BikeImage </th>
+        <td mat-cell *matCellDef="let element">
+
+          <img [src]= "element.file" alt=""  style="height: 60px;width:60px;"/>
+        </td>
+      </ng-container>
+
 
       <ng-container matColumnDef="update">
           <th mat-header-cell *matHeaderCellDef> Update </th>
           <td mat-cell *matCellDef="let element">
-            <button mat-icon-button style="color:rgb(9, 9, 129)" (click)="edit( element._id)">
+            <button mat-icon-button style="color:rgb(9, 9, 129)" (click)="edit(element._id)">
                 <mat-icon class="mat-18">edit</mat-icon>
             </button>
           </td>
@@ -100,7 +104,7 @@
         <ng-container matColumnDef="delete">
             <th mat-header-cell *matHeaderCellDef> Delete </th>
             <td mat-cell *matCellDef="let element">
-              <button mat-icon-button style="color:rgb(151, 34, 34)" >
+              <button mat-icon-button (click)="remove(element._oid)" style="color:rgb(151, 34, 34)" >
                   <mat-icon class="mat-18">delete</mat-icon>
               </button>
             </td>
@@ -109,5 +113,7 @@
           <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <app-footer></app-footer>
 
     </div>
+
