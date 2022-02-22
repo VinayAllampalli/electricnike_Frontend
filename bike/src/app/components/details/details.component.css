@@ -9,19 +9,29 @@
   flex: 0.98 1 auto;
 }
 .uploadbutton{
-  color:white;
-  background-color:#F6A609;
+  background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   box-shadow: 0 0 20px #eee;
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
   margin-left:20px;
 
 
 }
 .card{
-  width:100%;
-  margin-left:10%;
+  width:30%;
+
   margin-bottom: 15%;
   text-align: center;
   border:2px solid;
-  border-color:#6CB33F
+  border-color:#6CB33F;
+
 
 }
 .btn{
@@ -30,6 +40,6 @@
 
 }
 .submit{
-  background-color:#6CB33F ;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da  0%, #314755  100%);
   color:white;
 }

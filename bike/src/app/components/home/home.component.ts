@@ -19,6 +19,28 @@ export class HomeComponent implements OnInit {
   minDate = new Date();
   Ptime: FormControl = new FormControl('');
   Rtime: FormControl = new FormControl('');
+  imageObject = [{
+    image: 'https://cdn.mos.cms.futurecdn.net/KXNQ5WWemEDnftgFQBNBg-1200-80.jpg',
+    thumbImage: 'https://cdn.mos.cms.futurecdn.net/KXNQ5WWemEDnftgFQBNBg-1200-80.jpg',
+    title: 'OLA SCOOTER'
+  }, {
+    image: 'https://media.zigcdn.com/media/model/2020/Oct/ather-450-std-right-side-view_360x240.jpg',
+    thumbImage: 'https://media.zigcdn.com/media/model/2020/Oct/ather-450-std-right-side-view_360x240.jpg',
+    title: 'ATHER BIKE'
+  }, {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC1aQZg4lbTdnkwGBjBkJLSfneki2pU-2vMA&usqp=CAU',
+    thumbImage: 'hhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC1aQZg4lbTdnkwGBjBkJLSfneki2pU-2vMA&usqp=CAU',
+    title: 'BOUNCE INFINITY'
+  }, {
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvXqgvVNQ8fpuSkWyZEDvx32qzCYytuwCP4l7MgprVrX3ysPIImuqSNuVuKVxpDFOsk44&usqp=CAU',
+    thumbImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvXqgvVNQ8fpuSkWyZEDvx32qzCYytuwCP4l7MgprVrX3ysPIImuqSNuVuKVxpDFOsk44&usqp=CAU',
+    title: 'E PLUTO 7G'
+
+  }, {
+    image: 'https://imgd.aeplcdn.com/476x268/bw/models/hero-electric-optima-lead-acid20210511154426.jpg',
+    thumbImage: 'https://imgd.aeplcdn.com/476x268/bw/models/hero-electric-optima-lead-acid20210511154426.jpg',
+    title: 'HERO OPTIMA'
+  }];
 
   required: boolean = !1;
   @ViewChild('timepicker') timepicker: any;
@@ -73,9 +95,12 @@ export class HomeComponent implements OnInit {
     obj.Rtime = temp.Rtime;
 
     console.log('-----------------------------------', obj);
-    this.backend.bookinguser(obj).subscribe((data) => {
-      console.log('--------', data);
-    });
+    // this.backend.bookinguser(obj).subscribe((data) => {
+    //   console.log('--------', data);
+    // });
+    this.backend.bookingDetails=obj;
+    console.log("testsfs",this.backend.bookingDetails);
+
     this.router.navigate(['details']);
   }
 }

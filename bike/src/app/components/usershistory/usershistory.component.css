@@ -1,0 +1,16 @@
+table {
+  width: 100%;
+  margin-top:3%;border:2px solid;border-color:#6CB33F;
+  margin-left:10%;
+  margin-right:10%;
+  margin-bottom:3%;
+  text-align: left;
+  text-align: center;
+}
+
+th.mat-header-cell {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+
+}

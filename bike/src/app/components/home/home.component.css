@@ -12,14 +12,15 @@
   background-size: 1375px 600px;
 }
 .ride{
-  background-color:#6CB33F;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da  0%, #314755  100%);
   color: white;
 }
 .works{
   margin-top:5%;
   width:80%;
   border:2px solid;
-  border-color:#6CB33F
+  border-color:#6CB33F;
+
 
 }
 h1{
@@ -38,9 +39,13 @@ h3{
 }
 
 .mat-toolbar .timepicker-header .mat-primary .mat-toolbar-single-row{
-  background-color: #6CB33F !important;
+  background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%)
 }
-
+.foot
+{
+  height: 44px;
+  margin-top: -13px;
+}
 
 
 
